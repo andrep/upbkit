@@ -1,0 +1,4 @@
+.DS_Store
+MODULE.bazel.lock
+.cache
+compile_commands.json

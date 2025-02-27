@@ -1,0 +1,54 @@
+module(name = "upbkit", version = "1.0")
+bazel_dep(name = "protobuf", version = "30.0-rc1")
+bazel_dep(name = "abseil-cpp", version = "20250127.0")
+bazel_dep(name = "rules_apple", version = "3.19.0")
+bazel_dep(name = "rules_xcodeproj", version = "2.10.0")
+bazel_dep(name = "google_benchmark", version = "1.9.1")
+bazel_dep(name = "brotli", version = "1.1.0")
+bazel_dep(name = "rules_swift", version = "2.5.0")
+
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+git_override(
+    module_name = "hedron_compile_commands",
+    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
+    commit = "4f28899228fb3ad0126897876f147ca15026151e",
+    # Replace the commit hash (above) with the latest (https://github.com/hedronvision/bazel-compile-commands-extractor/commits/main).
+    # Even better, set up Renovate and let it do the work for you (see "Suggestion: Updates" in the README).
+)
+
+provisioning_profile_repository = use_extension("@rules_apple//apple:apple.bzl", "provisioning_profile_repository_extension")
+
+#
+# This entire section took a lot of trial-and-error to get working. Including
+# _only_ `rules_proto_grpc_objc` didn't work; Bazel complained about a missing
+# prebuilt_protoc_toolchain, which I didn't fully investigate. I saw that
+# `rules_proto_grpc` (which `rules_proto_grpc_objc` is a "subproject" of)
+# depends on `rules_proto`. Explicitly adding that as a bazel_dep made it work.
+# Dunno why; I'm no Bazel expert.
+#
+# The `strip_prefix` is required to work, and is courtesy of
+# <https://dev.to/nioan/how-to-use-unreleased-features-in-bazel-rule-sets-with-gitoverride-4p3f>.
+# I would never have guessed that.
+#
+
+bazel_dep(name = "rules_proto", version = "7.1.0")
+
+bazel_dep(name = "rules_proto_grpc", version = "5.0.1")
+git_override(
+    # This override is present since the most up-to-date rules_proto_grpc as of
+    # this time (5.0.1) has a bug where it compiles the Objective-C
+    # protoc-generated output as ARC, instead of using non_arc_srcs. The repo
+    # override here has that bug fixed.
+    module_name = "rules_proto_grpc",
+    remote = "https://github.com/andrep/rules_proto_grpc.git",
+    commit = "775a3f5bf4d093e5102e5b93874f1302f16b255e",
+    strip_prefix = "modules/core",
+)
+
+bazel_dep(name = "rules_proto_grpc_objc", version = "5.0.1")
+git_override(
+    module_name = "rules_proto_grpc_objc",
+    remote = "https://github.com/andrep/rules_proto_grpc.git",
+    commit = "775a3f5bf4d093e5102e5b93874f1302f16b255e",
+    strip_prefix = "modules/objc",
+)

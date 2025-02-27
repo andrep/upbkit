@@ -1,0 +1,345 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto2";
+
+package upbkit.test;
+
+option java_multiple_files = true;
+option objc_class_prefix = "UPBKitTest";
+
+enum FileLevelEnum {
+  FILE_LEVEL_ENUM_ZERO = 0;
+  FILE_LEVEL_ENUM_ONE = 1;
+  FILE_LEVEL_ENUM_TWO = 2;
+}
+
+enum EnumOne {
+  ENUM_ONE_ZERO = 0;
+  ENUM_ONE_ONE = 1;
+  ENUM_ONE_TWO = 2;
+  ENUM_ONE_THREE = 3;
+}
+
+enum EnumTwo {
+  ENUM_TWO_ZERO = 0;
+  ENUM_TWO_ONE = 1;
+  ENUM_TWO_TWO = 2;
+  ENUM_TWO_THREE = 3;
+  ENUM_TWO_FOUR = 4;
+  ENUM_TWO_FIVE = 5;
+  ENUM_TWO_SIX = 6;
+  ENUM_TWO_SEVEN = 7;
+  ENUM_TWO_EIGHT = 8;
+  ENUM_TWO_NINE = 9;
+}
+
+enum SixtyFive {
+  ENUM_1 = 1;
+  ENUM_2 = 2;
+  ENUM_3 = 3;
+  ENUM_4 = 4;
+  ENUM_5 = 5;
+  ENUM_6 = 6;
+  ENUM_7 = 7;
+  ENUM_8 = 8;
+  ENUM_9 = 9;
+  ENUM_10 = 10;
+  ENUM_11 = 11;
+  ENUM_12 = 12;
+  ENUM_13 = 13;
+  ENUM_14 = 14;
+  ENUM_15 = 15;
+  ENUM_16 = 16;
+  ENUM_17 = 17;
+  ENUM_18 = 18;
+  ENUM_19 = 19;
+  ENUM_20 = 20;
+  ENUM_21 = 21;
+  ENUM_22 = 22;
+  ENUM_23 = 23;
+  ENUM_24 = 24;
+  ENUM_25 = 25;
+  ENUM_26 = 26;
+  ENUM_27 = 27;
+  ENUM_28 = 28;
+  ENUM_29 = 29;
+  ENUM_30 = 30;
+  ENUM_31 = 31;
+  ENUM_32 = 32;
+  ENUM_33 = 33;
+  ENUM_34 = 34;
+  ENUM_35 = 35;
+  ENUM_36 = 36;
+  ENUM_37 = 37;
+  ENUM_38 = 38;
+  ENUM_39 = 39;
+  ENUM_40 = 40;
+  ENUM_41 = 41;
+  ENUM_42 = 42;
+  ENUM_43 = 43;
+  ENUM_44 = 44;
+  ENUM_45 = 45;
+  ENUM_46 = 46;
+  ENUM_47 = 47;
+  ENUM_48 = 48;
+  ENUM_49 = 49;
+  ENUM_50 = 50;
+  ENUM_51 = 51;
+  ENUM_52 = 52;
+  ENUM_53 = 53;
+  ENUM_54 = 54;
+  ENUM_55 = 55;
+  ENUM_56 = 56;
+  ENUM_57 = 57;
+  ENUM_58 = 58;
+  ENUM_59 = 59;
+  ENUM_60 = 60;
+  ENUM_61 = 61;
+  ENUM_62 = 62;
+  ENUM_63 = 63;
+  ENUM_64 = 64;
+  ENUM_65 = 65;
+}
+
+enum SixtyTwo {
+  ENUM_SIXTY_TWO_1 = 1;
+  ENUM_SIXTY_TWO_2 = 2;
+  ENUM_SIXTY_TWO_3 = 3;
+  ENUM_SIXTY_TWO_4 = 4;
+  ENUM_SIXTY_TWO_5 = 5;
+  ENUM_SIXTY_TWO_6 = 6;
+  ENUM_SIXTY_TWO_7 = 7;
+  ENUM_SIXTY_TWO_8 = 8;
+  ENUM_SIXTY_TWO_9 = 9;
+  ENUM_SIXTY_TWO_10 = 10;
+  ENUM_SIXTY_TWO_11 = 11;
+  ENUM_SIXTY_TWO_12 = 12;
+  ENUM_SIXTY_TWO_13 = 13;
+  ENUM_SIXTY_TWO_14 = 14;
+  ENUM_SIXTY_TWO_15 = 15;
+  ENUM_SIXTY_TWO_16 = 16;
+  ENUM_SIXTY_TWO_17 = 17;
+  ENUM_SIXTY_TWO_18 = 18;
+  ENUM_SIXTY_TWO_19 = 19;
+  ENUM_SIXTY_TWO_20 = 20;
+  ENUM_SIXTY_TWO_21 = 21;
+  ENUM_SIXTY_TWO_22 = 22;
+  ENUM_SIXTY_TWO_23 = 23;
+  ENUM_SIXTY_TWO_24 = 24;
+  ENUM_SIXTY_TWO_25 = 25;
+  ENUM_SIXTY_TWO_26 = 26;
+  ENUM_SIXTY_TWO_27 = 27;
+  ENUM_SIXTY_TWO_28 = 28;
+  ENUM_SIXTY_TWO_29 = 29;
+  ENUM_SIXTY_TWO_30 = 30;
+  ENUM_SIXTY_TWO_31 = 31;
+  ENUM_SIXTY_TWO_32 = 32;
+  ENUM_SIXTY_TWO_33 = 33;
+  ENUM_SIXTY_TWO_34 = 34;
+  ENUM_SIXTY_TWO_35 = 35;
+  ENUM_SIXTY_TWO_36 = 36;
+  ENUM_SIXTY_TWO_37 = 37;
+  ENUM_SIXTY_TWO_38 = 38;
+  ENUM_SIXTY_TWO_39 = 39;
+  ENUM_SIXTY_TWO_40 = 40;
+  ENUM_SIXTY_TWO_41 = 41;
+  ENUM_SIXTY_TWO_42 = 42;
+  ENUM_SIXTY_TWO_43 = 43;
+  ENUM_SIXTY_TWO_44 = 44;
+  ENUM_SIXTY_TWO_45 = 45;
+  ENUM_SIXTY_TWO_46 = 46;
+  ENUM_SIXTY_TWO_47 = 47;
+  ENUM_SIXTY_TWO_48 = 48;
+  ENUM_SIXTY_TWO_49 = 49;
+  ENUM_SIXTY_TWO_50 = 50;
+  ENUM_SIXTY_TWO_51 = 51;
+  ENUM_SIXTY_TWO_52 = 52;
+  ENUM_SIXTY_TWO_53 = 53;
+  ENUM_SIXTY_TWO_54 = 54;
+  ENUM_SIXTY_TWO_55 = 55;
+  ENUM_SIXTY_TWO_56 = 56;
+  ENUM_SIXTY_TWO_57 = 57;
+  ENUM_SIXTY_TWO_58 = 58;
+  ENUM_SIXTY_TWO_59 = 59;
+  ENUM_SIXTY_TWO_60 = 60;
+  ENUM_SIXTY_TWO_61 = 61;
+}
+
+enum TwentyNine {
+  ENUM_TWENTY_NINE_1 = 1;
+  ENUM_TWENTY_NINE_2 = 2;
+  ENUM_TWENTY_NINE_3 = 3;
+  ENUM_TWENTY_NINE_4 = 4;
+  ENUM_TWENTY_NINE_5 = 5;
+  ENUM_TWENTY_NINE_6 = 6;
+  ENUM_TWENTY_NINE_7 = 7;
+  ENUM_TWENTY_NINE_8 = 8;
+  ENUM_TWENTY_NINE_9 = 9;
+  ENUM_TWENTY_NINE_10 = 10;
+  ENUM_TWENTY_NINE_11 = 11;
+  ENUM_TWENTY_NINE_12 = 12;
+  ENUM_TWENTY_NINE_13 = 13;
+  ENUM_TWENTY_NINE_14 = 14;
+  ENUM_TWENTY_NINE_15 = 15;
+  ENUM_TWENTY_NINE_16 = 16;
+  ENUM_TWENTY_NINE_17 = 17;
+  ENUM_TWENTY_NINE_18 = 18;
+  ENUM_TWENTY_NINE_19 = 19;
+  ENUM_TWENTY_NINE_20 = 20;
+  ENUM_TWENTY_NINE_21 = 21;
+  ENUM_TWENTY_NINE_22 = 22;
+  ENUM_TWENTY_NINE_23 = 23;
+  ENUM_TWENTY_NINE_24 = 24;
+  ENUM_TWENTY_NINE_25 = 25;
+  ENUM_TWENTY_NINE_26 = 26;
+  ENUM_TWENTY_NINE_27 = 27;
+  ENUM_TWENTY_NINE_28 = 28;
+  ENUM_TWENTY_NINE_29 = 29;
+}
+
+enum Wild {
+  ENUM_WILD_ONE = 1000;
+  ENUM_WILD_TWO = 2000;
+  ENUM_WILD_THREE = 3000;
+}
+
+// include extensions.
+
+message Basic {
+  message NestedBasic {
+    optional string s = 1;
+  }
+
+  optional bool dense1 = 1;
+  optional int32 dense2 = 2;
+  optional double dense3 = 3;
+  optional sint64 dense4 = 4;
+  optional sint32 dense5 = 5;
+
+  optional bool b = 10;
+  optional float f = 20;
+  optional int32 i32 = 30;
+  optional sint32 s32 = 120;
+  optional uint32 u32 = 40;
+  optional fixed32 f32 = 130;
+  optional sfixed32 sf32 = 160;
+  optional sfixed32 sf32_2 = 161;  // to force padding for the next field number
+  optional bool b2 = 45;
+  optional FileLevelEnum e = 50;
+  optional NestedBasic nested = 110;
+  optional double d = 60;
+  optional int64 i64 = 70;
+  optional sint64 s64 = 140;
+  optional fixed64 f64 = 150;
+  optional sfixed64 sf64 = 170;
+  optional bool b3 = 85;
+  optional uint64 u64 = 80;
+  optional string s = 90;
+  optional bytes bs = 180;
+
+  repeated float rf = 190;
+  repeated NestedBasic rnested = 21;
+
+  optional EnumOne e1 = 501;
+  optional EnumTwo e2 = 502;
+  optional SixtyFive e3 = 503;
+  optional TwentyNine e4 = 504;
+  optional Wild e5 = 505;
+
+  // map<int32, string> mapi32s = 65;
+
+  optional bytes skipped_bs = 230;
+  optional sint64 skipped_s64 = 19;
+
+  oneof first_oneof {
+    int64 oo1_i64 = 10070;
+    sint64 oo1_s64 = 20140;
+    fixed64 oo1_f64 = 10150;
+    sfixed64 oo1_sf64 = 20170;
+    bool oo1_b3 = 10085;
+    uint64 oo1_u64 = 10080;
+    string oo1_s = 10090;
+    bytes oo1_bs = 10180;
+  }
+
+  oneof second_oneof {
+    int64 oo2_i64 = 20070;
+    sint64 oo2_s64 = 10140;
+    fixed64 oo2_f64 = 20150;
+    sfixed64 oo2_sf64 = 10170;
+    bool oo2_b3 = 20085;
+    uint64 oo2_u64 = 20080;
+    string oo2_s = 20090;
+    bytes oo2_bs = 20180;
+  }
+
+  optional string after_oneofs = 30000;
+  optional bool after_oneofs_bool = 30001;
+
+  repeated bool rbools = 88;
+  // required sint64 required_s64 = 89;
+
+  extensions 1000 to 2000 [verification = UNVERIFIED];
+}
+
+extend Basic {
+  optional float e_f = 1001;
+  optional double e_d = 1002;
+  repeated float e_rf = 1003;
+}
+
+enum ExtendEnum {
+  EE_1 = 1;
+  EE_2 = 2;
+  EE_3 = 3;
+}
+
+message OneBool {
+  optional bool a = 1;
+
+  extensions 100 to 200 [verification = UNVERIFIED];
+
+  extend OneBool {
+    optional ExtendEnum e_ee = 101;
+    repeated OneInt e_oi = 102;
+  }
+}
+
+message OneInt {
+  optional int32 a = 1;
+}
+
+message TwoBool {
+  optional bool a = 1;
+  optional bool b = 2;
+}
+
+message ThreeInt {
+  optional int32 a = 1;
+  optional int32 b = 2;
+  optional int32 c = 3;
+  // optional int32 d = 4;
+}
+
+message OneofTest {
+  optional int32 a = 1;
+
+  oneof a_oneof {
+    int32 oo_a = 2;
+    bool oo_b = 3;
+  }
+
+  optional int32 b = 4;
+}
